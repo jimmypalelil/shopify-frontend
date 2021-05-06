@@ -1,0 +1,42 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@700&family=Source+Code+Pro:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, #f6f7fc 0%, #d5e1e8 40%);
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.card {
+  margin: 30px;
+  background: #ffffff21;
+  font-family: "Roboto", sans-serif;
+  border-radius: 40px;
+  box-shadow: 0 45px 100px rgba(0,0,0,.4);
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #191919;
+  border-radius: 10px;
+}

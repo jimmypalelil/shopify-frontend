@@ -1,0 +1,21 @@
+<div class="main-container">
+  <img [src]="movie.Poster" [alt]="movie.Title">
+
+  <div class="info-container" [ngClass]="{'nominated': movie.nominated}">
+    <div class="movie-title">{{movie.Title}}</div>
+    <div class="movie-year">({{movie.Year}})</div>
+    <div class="movie-type">{{movie.Type | uppercase}}</div>
+  </div>
+
+  <button (click)="nominated.emit()">
+    <ng-container *ngIf="!movie.nominated; else showNominated">
+      <fa-icon [icon]="icons.vote"></fa-icon>
+      <div>Nominate</div>
+    </ng-container>
+
+    <ng-template #showNominated>
+      <fa-icon [icon]="icons.cancel"></fa-icon>
+      <div>Withdraw</div>
+    </ng-template>
+  </button>
+</div>

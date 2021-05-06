@@ -1,0 +1,64 @@
+$borderRadius: 7px;
+
+.main-container {
+  display: flex;
+  width: calc(100% - 20px);
+  border-radius: 7px;
+  background: #ffeaeaa1;
+  margin: 15px 10px;
+  justify-content: space-between;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 18%);
+
+  img {
+    width: 70px;
+    height: auto;
+    border-radius: $borderRadius 0 0 $borderRadius;
+  }
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    flex-grow: 2;
+    padding: 10px;
+
+    $fontSize: 20px;
+    .movie-title {
+      font-weight: 800;
+      font-size: $fontSize;
+    }
+    .movie-year {
+      font-weight: 600;
+      font-size: calc(#{$fontSize} * .8);
+    }
+    .movie-type {
+      font-weight: 400;
+      font-size: calc(#{$fontSize} * .65);
+    }
+  }
+
+  button {
+    background-color: #5fdcec;
+    border: none;
+    border-radius: 0 $borderRadius $borderRadius 0;
+    color: white;
+    cursor: pointer;
+    transition: 500ms ease-in-out all;
+
+    fa-icon {
+      font-size: 20px;
+    }
+
+    &:hover {
+      background: white;
+      color: black;
+      box-shadow: 0 0 32px rgba(255, 145, 77, 0.5);
+    }
+  }
+}
+
+.nominated {
+    background: black;
+    color: white;
+}

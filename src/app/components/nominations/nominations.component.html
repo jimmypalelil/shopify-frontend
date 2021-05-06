@@ -1,0 +1,18 @@
+<div class="main-container">
+  <h1>Your Nominations!</h1>
+  <h3>You Have Nominated {{nominator.nominations.size}} Movies</h3>
+
+  <div class="list-panel">
+    <div class="list-container">
+      <ng-container *ngIf="nominator.nominations.size > 0; else showNoNominations">
+        <app-movie-card
+          *ngFor="let item of nominator.nominations | keyvalue"
+          [movie]="item.value" (nominated)="handleNomination(item.value)"></app-movie-card>
+      </ng-container>
+
+      <ng-template #showNoNominations>
+        You Have Not Nominated Any Movie
+      </ng-template>
+    </div>
+  </div>
+</div>
