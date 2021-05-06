@@ -8,7 +8,7 @@ import {Nominator} from '../models/Nominator';
   providedIn: 'root'
 })
 export class MovieService {
-  private BASE_URL = 'https://www.omdbapi.com/?apikey=d2f61881';
+  private BASE_URL = 'https://www.omdbapi.com/?apikey=d2f61881&type=movie';
   nominator: Nominator;
 
   constructor(private http: HttpClient) {
