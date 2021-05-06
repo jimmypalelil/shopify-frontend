@@ -40,13 +40,13 @@ export class AppComponent implements OnInit {
 
   handlePage($event: PageEvent): void {
     console.log($event.pageIndex);
-    this.getSearchResults('ram', $event.pageIndex + 1);
+    this.getSearchResults(this.searchQuery, $event.pageIndex + 1);
   }
 
   handleSearch(): void {
     console.log(this.searchQuery);
     if (this.searchQuery) {
-      this.getSearchResults(this.searchQuery.trim());
+      this.getSearchResults(this.searchQuery);
     } else {
       this.nominator.clearSearchResults();
     }
@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
       }
     } catch (error) {
       console.log(error);
-       this.snackbar.open(error, 'Dismiss', {duration: 2000});
+      this.snackbar.open(error, 'Dismiss', {duration: 2000});
     }
   }
 }

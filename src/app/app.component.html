@@ -10,7 +10,7 @@
 
       <div class="search-container">
         <form class="search-input">
-          <input name="search-query" [(ngModel)]="searchQuery">
+          <input name="search-query" placeholder="Search for a Title, e.g.: The Terminator" [(ngModel)]="searchQuery">
           <button type="submit" (click)="handleSearch()">
             <fa-icon [icon]="icons.search"></fa-icon>
           </button>

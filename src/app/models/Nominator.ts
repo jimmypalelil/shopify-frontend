@@ -11,11 +11,13 @@ export class Nominator {
 
   setNominationsFromLocalStorage(): void {
     const entries = JSON.parse(localStorage.getItem('nominations'));
-    for (const entry of entries) {
-      this.nominations.set(entry[0], entry[1]);
+    if (entries) {
+      for (const entry of entries) {
+        this.nominations.set(entry[0], entry[1]);
+      }
+      console.log('set nominations from local storage');
+      console.log(this.nominations);
     }
-    console.log('set nominations from local storage');
-    console.log(this.nominations);
   }
 
   setSearchResults(results: OMDBResponse): void {

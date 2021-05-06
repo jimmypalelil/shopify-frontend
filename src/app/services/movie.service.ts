@@ -8,7 +8,7 @@ import {Nominator} from '../models/Nominator';
   providedIn: 'root'
 })
 export class MovieService {
-  private BASE_URL = 'http://www.omdbapi.com/?apikey=d2f61881';
+  private BASE_URL = 'https://www.omdbapi.com/?apikey=d2f61881';
   nominator: Nominator;
 
   constructor(private http: HttpClient) {
@@ -25,6 +25,7 @@ export class MovieService {
   }
 
   searchMovie(query: string, pageNum?: number): Promise<OMDBResponse> {
+    query = (query || '').trim();
     return this.http.get(this.makeURL(query, pageNum)).toPromise() as Promise<OMDBResponse>;
   }
 }
